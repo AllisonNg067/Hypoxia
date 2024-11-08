@@ -1,16 +1,22 @@
 import pandas as pd
 import numpy as np
 import new_data_processing_hypoxia as dp
-errorControl = pd.read_csv("new setonix hypoxia constrained growth errors control.csv")
+errorControl = pd.read_csv("new setonix hypoxia increased growth errors control.csv")
 errorControl = list(np.transpose(np.array(errorControl))[0])
 errorRT = pd.read_csv("new constrained alpha hypoxia errors RT.csv")
 errorRT = list(np.transpose(np.array(errorRT))[0])
 param = pd.read_csv("new constrained alpha hypoxia means RT.csv")
 param = list(np.transpose(np.array(param))[0])
+param[3] = 0.35305886856017443
+param[4] = 0.038689157423583934
+param[5] = 1.3922011510635113
 #print(get_equivalent_bed_treatment(param, 50, 1))
 errors = [errorControl, errorRT]
 errorMerged = dp.merge_lists(errors)
 #copy from non hypoxia fit
+errorMerged[3] = 0.3322101438609027
+errorMerged[4] = 0.052459807030662456
+errorMerged[5] = 0.5002197832301895
 errorMerged[6] = 1.4332917616497526e-17
 errorMerged[9] = 2.1870296656032597e-22
 errorMerged[12] = 3.818502442964274

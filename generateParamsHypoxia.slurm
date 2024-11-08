@@ -7,7 +7,7 @@
 #SBATCH --time=0:10:00
 #SBATCH --mail-user=23303755@student.uwa.edu.au
 #SBATCH --mail-type=ALL
-#SBATCH --dependency=afterok:17979695
+
 # load modules
 module load python/3.11.6
 module load py-numpy/1.26.1
